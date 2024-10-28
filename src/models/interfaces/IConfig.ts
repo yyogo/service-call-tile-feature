@@ -18,6 +18,7 @@ export interface IEntry
 	entity_id?: string;
 	autofill_entity_id?: boolean;
 	value_attribute?: string;
+	value_template?: string;
 	value_from_hass_delay?: number;
 
 	icon?: string;

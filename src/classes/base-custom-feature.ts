@@ -331,6 +331,14 @@ export class BaseCustomFeature extends LitElement {
 			clearInterval(this.valueUpdateInterval);
 			this.valueUpdateInterval = undefined;
 
+			if (this.config.value_template) {
+				let value = this.renderTemplate(this.config.value_template);
+				if (value !== undefined) {
+					this.value = value;
+					return;
+				}
+			}
+
 			this.valueAttribute = (
 				this.renderTemplate(
 					(this.config.value_attribute as string) ?? 'state',
